@@ -36,7 +36,7 @@ async def get_movie_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         context.user_data[f'movie_name_{counter}'] = movie['Title']
 
     if photos:
-        media = [InputMediaPhoto(p) for p in photos[:10]]
+        media = [InputMediaPhoto(p) for p in photos[:5]]
         await update.message.reply_media_group(media)
     text = "Найдено:\n\n"
     counter = 0
