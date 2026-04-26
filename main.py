@@ -17,7 +17,7 @@ TOKEN = os.getenv('BOT_TOKEN')
 DB_URL = os.getenv("DB_URL")
 async def post_init(app):
     pool = await asyncpg.create_pool(os.getenv("DB_URL"))
-
+    await init_db(pool)
     app.bot_data["pool"] = pool
 
 
