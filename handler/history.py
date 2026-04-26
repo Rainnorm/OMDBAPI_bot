@@ -8,8 +8,8 @@ async def history(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
 
     await query.answer()
-
-    history = await get_history(update.effective_user.id)
+    pool = context.application.bot_data["pool"]
+    history = await get_history(pool, update.effective_user.id)
     if not history:
         await query.message.reply_text('История пуста', reply_markup=search_keyboard())
         return

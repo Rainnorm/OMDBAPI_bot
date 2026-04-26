@@ -6,19 +6,23 @@ from states import GET_MOVIE, MENU, SEARCH
 from handler.cancel import cancel
 from handler.get_movie import get_movie_handler
 from handler.history import history
-from db import init_db
+from db import init_db, create_pool
 from handler.serach import seacrh
 from handler.choose import choose_1, choose_2, choose_3, choose_4, choose_5
+import asyncio
+import asyncpg
+
 load_dotenv()
 TOKEN = os.getenv('BOT_TOKEN')
+DB_URL = os.getenv("DB_URL")
+async def post_init(app):
+    pool = await asyncpg.create_pool(os.getenv("DB_URL"))
 
-
-async def on_startup(app):
-    await init_db()
+    app.bot_data["pool"] = pool
 
 
 def main():
-    app = ApplicationBuilder().token(TOKEN).post_init(on_startup).build()
+    app = ApplicationBuilder().token(TOKEN).post_init(post_init).build()
 
     conv_handler = ConversationHandler(
         entry_points=[CommandHandler('start', start)],

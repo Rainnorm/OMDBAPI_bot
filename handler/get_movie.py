@@ -44,5 +44,6 @@ async def get_movie_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         counter += 1
         text += f"{counter}) {movie['Title']} ({movie['Year']})\n"
     await update.message.reply_text(text, reply_markup=choose_movie_keyboard())
-    await save_user(update.effective_user.id, update.effective_user.username)
+    pool = context.application.bot_data["pool"]
+    await save_user(pool, update.effective_user.id, update.effective_user.username)
     return GET_MOVIE
