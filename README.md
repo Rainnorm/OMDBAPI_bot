@@ -40,9 +40,18 @@ Telegram-бот для поиска информации о фильмах с и
 ## Демо
 <img width="520" height="785" alt="omdb bot (2)" src="https://github.com/user-attachments/assets/e4df978a-cadd-4e3f-9421-fa62f46994c7" />
 
-
 ## Запуск
 ```bash
 git clone https://github.com/Rainnorm/OMDBAPI_bot.git
 cd OMDBAPI_bot
+```
+В директории проекта обязательно создать файл .env
+Пример .env:
+```bash
+#Обязательно заменить токены на свои
+BOT_TOKEN = 000000000:AAHxxx_xxxxplxxxSxxx_xxxxxGxxxIxxxx
+OMDB_API_TOKEN = xxxxxxxx 
+DB_URL=postgresql://postgres:1234@db:5432/bot
+```
+```bash
 docker-compose up --build
