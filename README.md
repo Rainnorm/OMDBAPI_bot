@@ -1,3 +1,4 @@
+
 # OMDB API Telegram Bot
 
 Telegram-бот для поиска информации о фильмах с использованием внешнего API.
@@ -37,7 +38,8 @@ Telegram-бот для поиска информации о фильмах с и
 - Форматирование ответа пользователю
 
 ## Демо
-_(добавь гифку или скриншоты работы бота)_
+<img width="520" height="785" alt="omdb bot (2)" src="https://github.com/user-attachments/assets/e4df978a-cadd-4e3f-9421-fa62f46994c7" />
+
 
 ## Запуск
 ```bash
