@@ -54,5 +54,6 @@ BOT_TOKEN = 000000000:AAHxxx_xxxxplxxxSxxx_xxxxxGxxxIxxxx
 OMDB_API_TOKEN = xxxxxxxx 
 DB_URL=postgresql://postgres:1234@db:5432/bot
 ```
+После создания и заполнения .env выполнить:
 ```bash
 docker-compose up --build
