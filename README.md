@@ -46,6 +46,7 @@ git clone https://github.com/Rainnorm/OMDBAPI_bot.git
 cd OMDBAPI_bot
 ```
 В директории проекта обязательно создать файл .env
+
 Пример .env:
 ```bash
 #Обязательно заменить токены на свои
